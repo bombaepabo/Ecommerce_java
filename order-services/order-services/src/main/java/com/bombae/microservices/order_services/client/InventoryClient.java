@@ -14,7 +14,7 @@ public interface InventoryClient {
     @GetExchange("/api/inventory")
     @CircuitBreaker(name="inventory",fallbackMethod="fallbackMethod")
     @Retry(name ="inventory")
-    boolean isInStock(@RequestParam("sku_code") String sku_code,
+    boolean isInStock(@RequestParam("skuCode") String skuCode,
                       @RequestParam("quantity") Integer quantity);
 
     default boolean fallbackMethod(String code,Integer quantity,Throwable throwable){

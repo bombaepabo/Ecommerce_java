@@ -8,5 +8,12 @@ public record OrderRequest(
         String orderNumber,             // optional
          String skuCode,       // required
          BigDecimal price,      // required
-         @JsonProperty("quantity") Integer quantity // required, maps JSON "quantity" -> quantity
-) {}
+         @JsonProperty("quantity") Integer quantity,
+        UserDetails userDetails// required, maps JSON "quantity" -> quantity
+){
+    public record UserDetails(String email,String firstName,String lastname){
+
+    }
+
+
+}

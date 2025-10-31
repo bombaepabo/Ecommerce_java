@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class InventoryService {
     private final InventoryRepository inventoryRepository;
-    public boolean isInStock(String sku_code,int quantity){
-        return inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEqual(sku_code,quantity);
+    public boolean isInStock(String skuCode,int quantity){
+        return inventoryRepository.existsBySkuCodeAndQuantityIsGreaterThanEqual(skuCode,quantity);
     }
 }
